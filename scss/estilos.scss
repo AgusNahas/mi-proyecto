@@ -1,0 +1,337 @@
+@import "grid";
+@import "vars";
+
+$fondo: blanco;
+
+
+nav {
+  //background: red !important;
+  display: inline-block;
+
+  $fondo: rosa;
+
+  @if $fondo == blanco {
+    background: white;
+  } @else if $fondo == rosa {
+    background: lightpink;
+  }
+
+  li {
+    padding: 10px 20px 10px 20px;
+    display: inline-block;
+
+    a {
+      text-decoration: none;
+      color: #1c294e;
+      font-weight: bold;
+      position: relative;
+
+      &:hover{
+        color: #1c294e;
+        text-decoration: none;
+
+        &:before {
+          visibility: visible;
+          width: 100%;
+        }
+      }
+
+      &:before {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 2px;
+        bottom: -3px;
+        left: 0;
+        background-color: hotpink;
+        visibility: hidden;
+        transition: $transitions;
+
+      }
+    }
+
+  }
+}
+
+html {
+  font-family: 'Montserrat', sans-serif;
+}
+
+body {
+  @if $fondo == blanco {
+    background: white;
+  } @else if $fondo == rosa {
+    background: lightpink;
+  }
+
+  margin: 0;
+}
+
+
+/* Estilos header */
+
+.header{
+  $azul-inst: #4488FF;
+  display: flex;
+  background: lightpink;
+  /*background-image: linear-gradient(blue, lightpink);*/
+  /*background-image: radial-gradient(blue, yellow, lightpink);*/
+  padding: 10px;
+  color: $azul-inst;
+}
+
+em {
+  position: relative;
+  left: 80px;
+}
+
+.navbar{
+  /*transform: translate(20px, 10px);*/
+  transform:
+          translateX(0px)
+          translateY(0px);
+  /*scale(1, 2)*/
+  /*scaleY(2);*/
+  /*rotate(90deg);*/
+}
+
+
+/* Estilo gradiente */
+
+section {
+  margin: 30px 0 30px 0;
+}
+
+/* Animacion de agrandado en hover para los links */
+
+
+.navbar li {
+  /*transition: font-size 1s;*/
+  /*transform: translateY(0px);*/
+  /*font-size: 100%;*/
+}
+
+
+.navbar li:hover {
+  /*font-size: 130%;*/
+  /*transform: translateY(-10px);*/
+  /*animation: pulse 2s ease-in-out;*/
+}
+
+
+
+/* Animación de rebote para el titulo de contacto */
+
+.contenido__contactotitle--animacion  {
+  animation: bounce 2s ease-in-out infinite;
+}
+
+
+/* Animación de aparecer para el titulo */
+
+h1 {
+  font-family: 'Pacifico', cursive;
+  animation: aparecer 5s ease-in-out ;
+}
+
+
+@keyframes aparecer {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+
+/* Estilo de texto de abajo con su aside */
+
+article {
+  overflow: hidden;
+  background: HotPink;
+}
+
+.sobre-nosotros{
+  display: flex;
+}
+
+
+/* Footer */
+
+footer {
+  width: 100%;
+  padding: 20px 0 20px 0;
+  text-align: center;
+  background: lightpink;
+
+}
+
+
+/* Animación focus en los input */
+
+input {
+  padding: 2px;
+  transition: all 0.5s;
+}
+
+input:focus{
+  padding: 10px;
+}
+
+
+/* Animación de cards de gatitos en hover */
+
+article {
+  transition: padding 1s;
+
+}
+
+article.gato:hover {
+  padding: 30px;
+
+  /*animation: resaltar 2s ease-in infinite;*/
+}
+
+
+@keyframes resaltar {
+  0% {
+    transform: scale(1);
+  }
+  25% {
+    transform: scale(1.1);
+  }
+  50% {
+    transform: scale(0.9);
+  }
+  75% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+
+}
+
+
+
+/* Animación gatitos */
+
+.imgGato2 {
+  position: relative;
+  top: -100%;
+  opacity: 0;
+
+
+  animation: aparecer2 6s ease-in infinite;
+}
+
+.imgGato3 {
+  position: relative;
+  top: -200%;
+  opacity: 0;
+
+  animation: aparecer3 6s ease-in infinite;
+}
+
+
+@keyframes aparecer2 {
+  0% {
+    /* 0s */
+    opacity: 0;
+  }
+  18% {
+    /* 1s */
+    opacity: 1;
+  }
+  33% {
+    /* 2s */
+    opacity: 1;
+  }
+  66% {
+
+    /* 4s */
+    opacity: 0;
+  }
+  100% {
+
+    /* 6s */
+    opacity: 0;
+  }
+
+}
+
+@keyframes aparecer3 {
+  0% {
+    /* 0s */
+    opacity: 0;
+  }
+  33% {
+    /* 2s */
+    opacity: 0;
+  }
+  48%{
+    /* 3s */
+    opacity: 1;
+  }
+  66% {
+    /* 4s */
+    opacity: 1;
+  }
+  84%{
+    /* 5s */
+    opacity: 0;
+  }
+  100% {
+    /* 6s */
+    opacity: 0;
+  }
+
+}
+
+
+$perritos: (
+    cocker: 20px,
+    labrador: 50px,
+    salchicha: 5px
+);
+
+@mixin estilosButton($background, $borderText, $animacion) {
+  background: $background;
+  border: 1px solid $borderText;
+  border-radius: 5px;
+  color: $borderText;
+  margin: 10px;
+  transition: all 0.2s ease-in-out;
+
+  @if $animacion == aclarar {
+    &:hover{
+      opacity: 0.6;
+    }
+  } @else if $animacion == agrandar {
+    &:hover{
+      padding: 20px;
+    }
+  }
+
+}
+
+@each $perrito, $tamanio in $perritos {
+  .btn-#{$perrito}{
+    @include estilosButton(steelblue, navy, aclarar);
+    padding: $tamanio;
+  }
+}
+
+//.btn-cocker
+//.btn-salchicha
+
+input.btn-form {
+  @include estilosButton(lightgreen, #0b2e13, sin-animacion);
+}
+
+
+
+
+
+

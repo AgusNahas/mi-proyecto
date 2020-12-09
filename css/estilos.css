@@ -1,0 +1,301 @@
+@charset "UTF-8";
+/* Grid de gatitos */
+.contenido__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, 24vw);
+  text-align: center;
+  width: 98%;
+  grid-template-areas: "gato1 gato2 gato6 gato6" "gato1 gato7 gato7 gato3" "gato4 gato5 gato8 gato10" "gato9 gato9 . . ";
+  grid-column-gap: 10px;
+  grid-row-gap: 10px;
+  padding: 10px; }
+
+.gato1 {
+  grid-area: gato1; }
+
+.gato2 {
+  grid-area: gato2; }
+
+.gato3 {
+  grid-area: gato3; }
+
+.gato4 {
+  grid-area: gato4; }
+
+.gato5 {
+  grid-area: gato5; }
+
+.gato6 {
+  grid-area: gato6; }
+
+.gato7 {
+  grid-area: gato7; }
+
+.gato8 {
+  grid-area: gato8; }
+
+.gato9 {
+  grid-area: gato9; }
+
+.gato10 {
+  grid-area: gato10; }
+
+.gato1 {
+  background-image: url("images/gato1.jpg"); }
+
+.gato2 {
+  background-image: url("images/gato2.jpg"); }
+
+.gato3 {
+  background-image: url("images/gato3.jpg"); }
+
+.gato4 {
+  background-image: url("images/gato4.jpg"); }
+
+.btn--twitter {
+  background-color: #55acee; }
+
+.btn--facebook {
+  background-color: #3a5795; }
+
+.btn--send-mail {
+  background-color: #C25E30; }
+
+img {
+  max-width: 100%;
+  max-height: 100%; }
+
+article.contenido__grid__gato {
+  position: relative; }
+
+.contenido__grid__gato.div__hover {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  color: white;
+  background: rgba(0, 0, 0, 0.7);
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out; }
+  .contenido__grid__gato.div__hover:hover {
+    opacity: 0.8; }
+
+nav {
+  display: inline-block;
+  background: lightpink; }
+  nav li {
+    padding: 10px 20px 10px 20px;
+    display: inline-block; }
+    nav li a {
+      text-decoration: none;
+      color: #1c294e;
+      font-weight: bold;
+      position: relative; }
+      nav li a:hover {
+        color: #1c294e;
+        text-decoration: none; }
+        nav li a:hover:before {
+          visibility: visible;
+          width: 100%; }
+      nav li a:before {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 2px;
+        bottom: -3px;
+        left: 0;
+        background-color: hotpink;
+        visibility: hidden;
+        transition: all 0.3s ease-in-out; }
+
+html {
+  font-family: 'Montserrat', sans-serif; }
+
+body {
+  background: white;
+  margin: 0; }
+
+/* Estilos header */
+.header {
+  display: flex;
+  background: lightpink;
+  /*background-image: linear-gradient(blue, lightpink);*/
+  /*background-image: radial-gradient(blue, yellow, lightpink);*/
+  padding: 10px;
+  color: #4488FF; }
+
+em {
+  position: relative;
+  left: 80px; }
+
+.navbar {
+  /*transform: translate(20px, 10px);*/
+  transform: translateX(0px) translateY(0px);
+  /*scale(1, 2)*/
+  /*scaleY(2);*/
+  /*rotate(90deg);*/ }
+
+/* Estilo gradiente */
+section {
+  margin: 30px 0 30px 0; }
+
+/* Animacion de agrandado en hover para los links */
+.navbar li {
+  /*transition: font-size 1s;*/
+  /*transform: translateY(0px);*/
+  /*font-size: 100%;*/ }
+
+.navbar li:hover {
+  /*font-size: 130%;*/
+  /*transform: translateY(-10px);*/
+  /*animation: pulse 2s ease-in-out;*/ }
+
+/* Animación de rebote para el titulo de contacto */
+.contenido__contactotitle--animacion {
+  animation: bounce 2s ease-in-out infinite; }
+
+/* Animación de aparecer para el titulo */
+h1 {
+  font-family: 'Pacifico', cursive;
+  animation: aparecer 5s ease-in-out; }
+
+@keyframes aparecer {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
+/* Estilo de texto de abajo con su aside */
+article {
+  overflow: hidden;
+  background: HotPink; }
+
+.sobre-nosotros {
+  display: flex; }
+
+/* Footer */
+footer {
+  width: 100%;
+  padding: 20px 0 20px 0;
+  text-align: center;
+  background: lightpink; }
+
+/* Animación focus en los input */
+input {
+  padding: 2px;
+  transition: all 0.5s; }
+
+input:focus {
+  padding: 10px; }
+
+/* Animación de cards de gatitos en hover */
+article {
+  transition: padding 1s; }
+
+article.gato:hover {
+  padding: 30px;
+  /*animation: resaltar 2s ease-in infinite;*/ }
+
+@keyframes resaltar {
+  0% {
+    transform: scale(1); }
+  25% {
+    transform: scale(1.1); }
+  50% {
+    transform: scale(0.9); }
+  75% {
+    transform: scale(1.1); }
+  100% {
+    transform: scale(1); } }
+
+/* Animación gatitos */
+.imgGato2 {
+  position: relative;
+  top: -100%;
+  opacity: 0;
+  animation: aparecer2 6s ease-in infinite; }
+
+.imgGato3 {
+  position: relative;
+  top: -200%;
+  opacity: 0;
+  animation: aparecer3 6s ease-in infinite; }
+
+@keyframes aparecer2 {
+  0% {
+    /* 0s */
+    opacity: 0; }
+  18% {
+    /* 1s */
+    opacity: 1; }
+  33% {
+    /* 2s */
+    opacity: 1; }
+  66% {
+    /* 4s */
+    opacity: 0; }
+  100% {
+    /* 6s */
+    opacity: 0; } }
+
+@keyframes aparecer3 {
+  0% {
+    /* 0s */
+    opacity: 0; }
+  33% {
+    /* 2s */
+    opacity: 0; }
+  48% {
+    /* 3s */
+    opacity: 1; }
+  66% {
+    /* 4s */
+    opacity: 1; }
+  84% {
+    /* 5s */
+    opacity: 0; }
+  100% {
+    /* 6s */
+    opacity: 0; } }
+
+.btn-cocker {
+  background: steelblue;
+  border: 1px solid navy;
+  border-radius: 5px;
+  color: navy;
+  margin: 10px;
+  transition: all 0.2s ease-in-out;
+  padding: 20px; }
+  .btn-cocker:hover {
+    opacity: 0.6; }
+
+.btn-labrador {
+  background: steelblue;
+  border: 1px solid navy;
+  border-radius: 5px;
+  color: navy;
+  margin: 10px;
+  transition: all 0.2s ease-in-out;
+  padding: 50px; }
+  .btn-labrador:hover {
+    opacity: 0.6; }
+
+.btn-salchicha {
+  background: steelblue;
+  border: 1px solid navy;
+  border-radius: 5px;
+  color: navy;
+  margin: 10px;
+  transition: all 0.2s ease-in-out;
+  padding: 5px; }
+  .btn-salchicha:hover {
+    opacity: 0.6; }
+
+input.btn-form {
+  background: lightgreen;
+  border: 1px solid #0b2e13;
+  border-radius: 5px;
+  color: #0b2e13;
+  margin: 10px;
+  transition: all 0.2s ease-in-out; }
